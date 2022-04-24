@@ -32,7 +32,8 @@ namespace Application.Core
         public IEnumerable<TaskModelOutput> GetAllTask()
         {
             var allTasks = _taskRepository.GetAll();
-            return _mapper.Map<IEnumerable<TaskModelOutput>>(allTasks);
+            var returnTasks = _mapper.Map<IEnumerable<TaskModelOutput>>(allTasks);
+            return returnTasks;
         }
 
         public TaskModelOutput GetTask(Guid id)
