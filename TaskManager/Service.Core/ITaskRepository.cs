@@ -11,10 +11,10 @@ namespace Service.Core
     {
         IEnumerable<TaskModel> GetAll();
         TaskModel GetById(Guid id);
-        IEnumerable<TaskModel> GetByDate(DateTimeOffset date);
+        IEnumerable<TaskModel> GetByDate(DateTimeOffset start,DateTimeOffset end);
         TaskModel Create(TaskModel model);
         TaskModel Update(TaskModel model);
-        IEnumerable<TaskModel> Delete(Guid id);
+        void Delete(TaskModel model);
 
 
     }
