@@ -1,7 +1,10 @@
 
 
 
+using Application.Core;
 using Persistence.EF;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPersistenceService(builder.Configuration);
+builder.Services.AddTaskApplication();
+
 var app = builder.Build();
 
 
