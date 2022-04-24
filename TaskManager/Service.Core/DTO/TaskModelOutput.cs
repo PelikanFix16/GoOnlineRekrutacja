@@ -8,11 +8,11 @@ namespace Service.Core.DTO
 {
     public class TaskModelOutput
     {
-        public Guid Id;
-        public DateTimeOffset CreatedDate;
-        public DateTimeOffset? ExpirationDate;
-        public string Title;
-        public string Description;
-        public int CompleteStatus;
+        public Guid Id { get; set; }
+        public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset? ExpirationDate { get; set; }
+        public string Title { get; set; }
+        public string? Description { get; set; }
+        public int CompleteStatus { get; set; }
     }
 }
