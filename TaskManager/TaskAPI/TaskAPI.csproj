@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
     <ProjectReference Include="..\Persistence.EF\Persistence.EF.csproj" />
   </ItemGroup>
 
