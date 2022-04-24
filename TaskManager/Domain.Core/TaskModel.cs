@@ -12,10 +12,10 @@ namespace Domain.Core
         public DateTimeOffset CreatedDate { get; private set; }
         public DateTimeOffset? ExpirationDate { get; private set; }
         public string Title { get; private set; }
-        public string Description { get; private set; }
+        public string? Description { get; private set; }
         public int CompleteStatus { get; private set; }
 
-        public TaskModel(DateTimeOffset? expirationDate,string title,string description)
+        public TaskModel(DateTimeOffset? expirationDate,string title,string? description)
         {
             CreatedDate = DateTimeOffset.Now;
             ExpirationDate = expirationDate;
@@ -23,6 +23,14 @@ namespace Domain.Core
             Description = description;
             CompleteStatus = 0;
             Id = Guid.NewGuid();
+        }
+        public void UpdateCompleteStatus(int status)
+        {
+            if (status > 100)
+                throw new InvalidOperationException("Status cannot be bigger than 100");
+            if (status < 0)
+                throw new InvalidOperationException("status cannot be smaller than 0");
+            CompleteStatus = status;
         }
 
     }
