@@ -55,7 +55,7 @@ namespace TaskAPI.Controllers
             return Ok(createdTask);
         }
 
-        [HttpPut]
+        [HttpPatch]
         [ActionName("UpdateTask")]
         [Route("task/{id}")]
         public ActionResult<TaskModelOutput> UpdateTask(Guid id, TaskModelInputUpdate model)
@@ -63,6 +63,16 @@ namespace TaskAPI.Controllers
             var updatedTask = _service.UpdateTask(id, model);
             return Ok(updatedTask);
         }
+
+        [HttpDelete]
+        [ActionName("DeleteTask")]
+        [Route("task/{id}")]
+        public ActionResult<IEnumerable<TaskModelOutput>> DeleteTask(Guid id)
+        {
+            var availableTasks = _service.RemoveTask(id);
+            return Ok(availableTasks);
+        }
+
 
 
     }
