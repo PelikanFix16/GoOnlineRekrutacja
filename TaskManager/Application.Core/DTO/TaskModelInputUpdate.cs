@@ -8,10 +8,9 @@ namespace Service.Core.DTO
 {
     public class TaskModelInputUpdate
     {
-        public Guid Id;
-        public string Title;
-        public string Description;
-        public DateTimeOffset? ExpirationDate;
-        public int? CompleteStatus;
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public DateTimeOffset? ExpirationDate { get; set; }
+        public int? CompleteStatus { get; set; }
     }
 }

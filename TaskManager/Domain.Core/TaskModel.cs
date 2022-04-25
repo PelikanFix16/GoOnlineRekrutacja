@@ -18,7 +18,7 @@ namespace Domain.Core
         public TaskModel(DateTimeOffset? expirationDate,string title,string? description)
         {
             CreatedDate = DateTimeOffset.Now;
-            ExpirationDate = expirationDate;
+            UpdateExpirationDate(expirationDate);
             Title = title;
             Description = description;
             CompleteStatus = 0;
@@ -31,6 +31,24 @@ namespace Domain.Core
             if (status < 0)
                 throw new InvalidOperationException("status cannot be smaller than 0");
             CompleteStatus = status;
+        }
+        public void UpdateTitle(string title)
+        {
+            if (String.IsNullOrEmpty(title))
+                throw new ArgumentException("Title cannot be null or empty");
+            Title = title;
+        }
+        public void UpdateDescription(string description)
+        {
+            if (String.IsNullOrWhiteSpace(description))
+                throw new ArgumentException("Description cannot be null or empty");
+            Description = description;
+        }
+        public void UpdateExpirationDate(DateTimeOffset? date)
+        {
+            if (date < CreatedDate)
+                throw new ArgumentException("Expiration date cannot be smaller than created date");          
+            ExpirationDate = date;
         }
 
     }

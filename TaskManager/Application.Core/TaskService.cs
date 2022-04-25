@@ -56,11 +56,18 @@ namespace Application.Core
             return _mapper.Map<IEnumerable<TaskModelOutput>>(availableTasks);
         }
 
-        public TaskModelOutput UpdateTask(TaskModelInputUpdate task)
+        public TaskModelOutput UpdateTask(Guid id,TaskModelInputUpdate task)
         {
-            var entity = _mapper.Map<TaskModel>(task);
+            var entity = _taskRepository.GetById(id);
             if(task.CompleteStatus != null)
-                entity.UpdateCompleteStatus(entity.CompleteStatus);
+                entity.UpdateCompleteStatus(task.CompleteStatus.GetValueOrDefault());
+            if(String.IsNullOrEmpty(task.Description) == false)
+                entity.UpdateDescription(task.Description);
+            if (String.IsNullOrEmpty(task.Title) == false)
+                entity.UpdateTitle(task.Title);
+            if (task.ExpirationDate != null)
+                entity.UpdateExpirationDate(task.ExpirationDate);
+
             var updatedTask = _taskRepository.Update(entity);
             return _mapper.Map<TaskModelOutput>(updatedTask);
         }

@@ -55,7 +55,14 @@ namespace TaskAPI.Controllers
             return Ok(createdTask);
         }
 
-
+        [HttpPut]
+        [ActionName("UpdateTask")]
+        [Route("task/{id}")]
+        public ActionResult<TaskModelOutput> UpdateTask(Guid id, TaskModelInputUpdate model)
+        {
+            var updatedTask = _service.UpdateTask(id, model);
+            return Ok(updatedTask);
+        }
 
 
     }
