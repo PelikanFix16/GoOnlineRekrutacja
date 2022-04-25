@@ -36,7 +36,7 @@ namespace Application.Core
             return returnTasks;
         }
 
-        public IEnumerable<TaskModelOutput> GetByDte(DateOnly start, DateOnly end)
+        public IEnumerable<TaskModelOutput> GetByDate(DateOnly start, DateOnly end)
         {
             var tasks = _taskRepository.GetByDate(start,end);
             return _mapper.Map<IEnumerable<TaskModelOutput>>(tasks);

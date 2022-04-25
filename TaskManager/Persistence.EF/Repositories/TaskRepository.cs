@@ -38,10 +38,11 @@ namespace Persistence.EF.Repositories
 
         public IEnumerable<TaskModel> GetByDate(DateOnly start,DateOnly end)
         {
-            return _dbContext.Tasks.Where(t => 
-            DateOnly.FromDateTime(t.ExpirationDate!.Value.DateTime) >= start && 
-            DateOnly.FromDateTime(t.ExpirationDate!.Value.DateTime) <= end && 
-            t.CompleteStatus != 100).ToList();
+            var taskNotNullExpiration = _dbContext.Tasks.Where(task => task.ExpirationDate != null).ToList();
+            return taskNotNullExpiration.Where(t =>
+            DateOnly.FromDateTime(t.ExpirationDate.GetValueOrDefault().DateTime) >= start &&
+            DateOnly.FromDateTime(t.ExpirationDate.GetValueOrDefault().DateTime) <= end && 
+            t.CompleteStatus != 100);
         }
 
 

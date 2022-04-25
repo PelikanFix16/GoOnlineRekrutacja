@@ -14,7 +14,7 @@ namespace Service.Core
         TaskModelOutput UpdateTask(TaskModelInputUpdate task);
         IEnumerable<TaskModelOutput> GetAllTask();
         TaskModelOutput GetTask(Guid id);
-        IEnumerable<TaskModelOutput> GetByDte(DateOnly start, DateOnly end);
+        IEnumerable<TaskModelOutput> GetByDate(DateOnly start, DateOnly end);
    
 
 
