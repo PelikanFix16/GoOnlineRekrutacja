@@ -36,10 +36,14 @@ namespace Persistence.EF.Repositories
             return _dbContext.Tasks.ToList();
         }
 
-        public IEnumerable<TaskModel> GetByDate(DateTimeOffset start, DateTimeOffset end)
+        public IEnumerable<TaskModel> GetByDate(DateOnly start,DateOnly end)
         {
-            return _dbContext.Tasks.Where(t => t.CreatedDate <= start && t.ExpirationDate >= end && t.CompleteStatus != 100).ToList();
+            return _dbContext.Tasks.Where(t => 
+            DateOnly.FromDateTime(t.ExpirationDate!.Value.DateTime) >= start && 
+            DateOnly.FromDateTime(t.ExpirationDate!.Value.DateTime) <= end && 
+            t.CompleteStatus != 100).ToList();
         }
+
 
         public TaskModel GetById(Guid id)
         {
