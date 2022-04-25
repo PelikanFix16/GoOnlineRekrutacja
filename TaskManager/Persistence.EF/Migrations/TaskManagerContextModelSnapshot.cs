@@ -31,7 +31,7 @@ namespace Persistence.EF.Migrations
                     b.Property<int>("CompleteStatus")
                         .HasColumnType("int");
 
-                    b.Property<DateTimeOffset>("CreatedDate")
+                    b.Property<DateTimeOffset?>("CreatedDate")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
@@ -51,27 +51,27 @@ namespace Persistence.EF.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("26b233e9-cbd9-4e0f-ad75-7993e5d7399b"),
+                            Id = new Guid("ed4bf9d1-a7c4-4f89-8d0d-4fac1bf8f294"),
                             CompleteStatus = 0,
-                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 24, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5222), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 25, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1859), new TimeSpan(0, 2, 0, 0, 0)),
                             Description = "Zrobic zakupy w sklepie, koszt bulek 0.40gr",
-                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 4, 25, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5175), new TimeSpan(0, 2, 0, 0, 0)),
+                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 4, 26, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1811), new TimeSpan(0, 2, 0, 0, 0)),
                             Title = "Kupic bulki"
                         },
                         new
                         {
-                            Id = new Guid("04695079-2d60-4c94-a15a-12ad10fb08ec"),
+                            Id = new Guid("ef20f70e-4b78-45eb-9404-de3da9ff16dc"),
                             CompleteStatus = 0,
-                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 24, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5255), new TimeSpan(0, 2, 0, 0, 0)),
-                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 4, 26, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5252), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 25, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1898), new TimeSpan(0, 2, 0, 0, 0)),
+                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 4, 27, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1895), new TimeSpan(0, 2, 0, 0, 0)),
                             Title = "Natankowac samochod"
                         },
                         new
                         {
-                            Id = new Guid("aeec3b85-7623-4c63-b0fc-f5efcb25567c"),
+                            Id = new Guid("e74dc990-5488-4b39-aecc-28c1eecb011f"),
                             CompleteStatus = 0,
-                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 24, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5260), new TimeSpan(0, 2, 0, 0, 0)),
-                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 5, 2, 21, 46, 35, 605, DateTimeKind.Unspecified).AddTicks(5258), new TimeSpan(0, 2, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2022, 4, 25, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1904), new TimeSpan(0, 2, 0, 0, 0)),
+                            ExpirationDate = new DateTimeOffset(new DateTime(2022, 5, 3, 23, 34, 8, 30, DateTimeKind.Unspecified).AddTicks(1901), new TimeSpan(0, 2, 0, 0, 0)),
                             Title = "Napic sie kawy"
                         });
                 });
