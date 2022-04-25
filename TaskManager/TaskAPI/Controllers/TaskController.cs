@@ -73,6 +73,16 @@ namespace TaskAPI.Controllers
             return Ok(availableTasks);
         }
 
+        [HttpPatch]
+        [ActionName("DoneTask")]
+        [Route("task/{id}/done")]
+        public ActionResult<TaskModelOutput> DoneTask(Guid id)
+        {
+            var doneModel = new TaskModelInputUpdate() { CompleteStatus = 100 };
+            var updatedTask = _service.UpdateTask(id, doneModel);
+            return Ok(updatedTask);
+        }
+
 
 
     }
