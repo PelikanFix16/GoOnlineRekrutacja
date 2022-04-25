@@ -14,6 +14,8 @@ namespace Application.Core.Mapper
         public MappingProfile()
         {
             CreateMap<TaskModel,TaskModelOutput>();
+            CreateMap<TaskModelInput, TaskModel>();
+
         }
     }
 }

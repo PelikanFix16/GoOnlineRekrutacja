@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Service.Core;
 using Service.Core.DTO;
-using TaskAPI.Models;
+
 
 namespace TaskAPI.Controllers
 {
@@ -20,6 +20,7 @@ namespace TaskAPI.Controllers
         [HttpGet]
         [ActionName("GetAllTasks")]
         [Route("task")]
+
         public ActionResult<IEnumerable<TaskModelOutput>> GetAllTasks()
         {
             var taks = _service.GetAllTask().ToList();
@@ -42,6 +43,16 @@ namespace TaskAPI.Controllers
             var endDate = DateOnly.Parse(end);
             var tasks = _service.GetByDate(startDate, endDate);
             return Ok(tasks);
+        }
+
+        [HttpPost]
+        [ActionName("CreateTask")]
+        [Route("task")]
+
+        public ActionResult<TaskModelOutput> CreateTask(TaskModelInput taskModel)
+        {
+            var createdTask = _service.AddNewTask(taskModel);
+            return Ok(createdTask);
         }
 
 

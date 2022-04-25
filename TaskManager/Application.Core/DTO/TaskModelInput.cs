@@ -8,9 +8,9 @@ namespace Service.Core.DTO
 {
     public class TaskModelInput
     {
-        public string Title;
-        public string Description;
-        public DateTimeOffset? ExpirationDate;
+        public string Title { get; set; }
+        public string? Description { get; set; }
+        public DateTimeOffset? ExpirationDate { get; set; }
 
 
     }
