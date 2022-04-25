@@ -17,11 +17,22 @@ namespace TaskAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Todos")]
         public ActionResult<IEnumerable<TaskModelOutput>> GetAllTasks()
         {
             var taks = _service.GetAllTask().ToList();
             return Ok(taks);
         }
+        [HttpGet]
+        [Route("Todos/{id}")]
+        public ActionResult<TaskModelOutput> GetTask(Guid id)
+        {
+            var task = _service.GetTask(id);
+            return Ok(task);
+        }
+        
+
+
 
     }
 }
