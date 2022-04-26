@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Test", "Infr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persi.EF.Test", "Persi.EF.Test\Persi.EF.Test.csproj", "{290C9C89-470A-4FCE-A0DC-E4EEE6D20E2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Core.Test", "Application.Core.Test\Application.Core.Test.csproj", "{67EE8C02-271E-4EED-BA01-FB1B393C4E9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{290C9C89-470A-4FCE-A0DC-E4EEE6D20E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{290C9C89-470A-4FCE-A0DC-E4EEE6D20E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{290C9C89-470A-4FCE-A0DC-E4EEE6D20E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67EE8C02-271E-4EED-BA01-FB1B393C4E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67EE8C02-271E-4EED-BA01-FB1B393C4E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67EE8C02-271E-4EED-BA01-FB1B393C4E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67EE8C02-271E-4EED-BA01-FB1B393C4E9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{35250803-F596-46C9-B0D4-3CCB16485168} = {7A6E0E39-29F7-4C67-9D12-DE0C1EB29AFA}
 		{3586BF60-2E4D-444C-9011-12D9E5802AB5} = {7A6E0E39-29F7-4C67-9D12-DE0C1EB29AFA}
 		{290C9C89-470A-4FCE-A0DC-E4EEE6D20E2C} = {3586BF60-2E4D-444C-9011-12D9E5802AB5}
+		{67EE8C02-271E-4EED-BA01-FB1B393C4E9A} = {35250803-F596-46C9-B0D4-3CCB16485168}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4B5E236-55D9-4DC9-A30B-94A1B4471A9A}
