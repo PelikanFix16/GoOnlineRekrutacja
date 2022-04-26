@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Core
 {
+    /// <summary>
+    /// Base entity for tasks business roles goes here
+    /// </summary>
     public class TaskModel
     {
         public Guid Id { get; private set; }
