@@ -6,6 +6,8 @@ using Service.Core.DTO;
 
 namespace TaskAPI.Controllers
 {
+    //Controller is self documented in swagger
+    //https://localhost:7149/swagger/index.html
     [Route("api")]
     [ApiController]
     public class TaskController : ControllerBase
