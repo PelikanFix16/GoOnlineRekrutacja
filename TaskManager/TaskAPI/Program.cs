@@ -2,6 +2,7 @@
 
 
 using Application.Core;
+using Microsoft.AspNetCore.Diagnostics;
 using Persistence.EF;
 
 
@@ -23,11 +24,18 @@ var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+ // we want swagger in production its only test purpose 
+ app.UseSwagger();
+ app.UseSwaggerUI();
+
+app.UseExceptionHandler(c => c.Run(async context =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    var exception = context.Features
+        .Get<IExceptionHandlerPathFeature>()
+        .Error;
+    var response = new { error = exception.Message };
+    await context.Response.WriteAsJsonAsync(response);
+}));
 
 app.UseHttpsRedirection();
 
