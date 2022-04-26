@@ -85,6 +85,15 @@ namespace TaskAPI.Controllers
             return Ok(updatedTask);
         }
 
+        [HttpGet]
+        [ActionName("StatusAPI")]
+        [Route("status")]
+        public ActionResult<string> Status()
+        {
+            return Ok("Working");
+        }
+
+
 
 
     }
