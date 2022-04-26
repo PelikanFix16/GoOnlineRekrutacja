@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Service.Core.DTO
 {
+    /// <summary>
+    /// Input DTO that be pssed to service
+    /// </summary>
     public class TaskModelInput
     {
         public string Title { get; set; }

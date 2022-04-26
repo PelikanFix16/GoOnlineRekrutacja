@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Service.Core.DTO
 {
+    /// <summary>
+    /// Output dto for getting results from service 
+    /// we do not want return Task model
+    /// </summary>
     public class TaskModelOutput
     {
         public Guid Id { get; set; }

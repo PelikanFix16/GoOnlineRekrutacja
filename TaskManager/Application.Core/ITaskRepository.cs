@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Service.Core
 {
+    /// <summary>
+    /// Task repository interface its port to implement this in databse infrastructure (adapter)
+    /// </summary>
     public interface ITaskRepository
     {
         IEnumerable<TaskModel> GetAll();

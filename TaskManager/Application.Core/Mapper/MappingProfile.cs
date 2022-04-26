@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Application.Core.Mapper
 {
+    /// <summary>
+    /// Base mapping profile for automapper
+    /// </summary>
     public class MappingProfile : Profile
     {
         public MappingProfile()

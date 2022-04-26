@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Service.Core
 {
+    /// <summary>
+    /// Use cases for task service
+    /// If want implement new version of task service implement this interface ant write new class implementing it
+    /// </summary>
     public interface ITaskService
     {
         TaskModelOutput AddNewTask(TaskModelInput task);

@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace Application.Core
 {
+    /// <summary>
+    /// Class responsible for comunication betwween user interface
+    /// This class have implemented comunication for repository using ports and adapters
+    /// Have Simple functions CRUD 
+    /// </summary>
     public class TaskService : ITaskService
     {
         private readonly ITaskRepository _taskRepository;
