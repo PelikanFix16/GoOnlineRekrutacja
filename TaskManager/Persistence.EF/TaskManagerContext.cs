@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.EF
 {
+    /// <summary>
+    /// ORM context for EF we saying there we want using task model object inside database
+    /// </summary>
     public class TaskManagerContext : DbContext
     {
         public TaskManagerContext(DbContextOptions<TaskManagerContext> options) : base(options)

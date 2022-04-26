@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.EF.Repositories
 {
+    /// <summary>
+    /// Adapter for TaskRepository communication and function to database
+    /// </summary>
     public class TaskRepository : ITaskRepository
     {
         private readonly TaskManagerContext _dbContext;

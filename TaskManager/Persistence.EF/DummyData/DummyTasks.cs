@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Persistence.EF.DummyData
 {
+    /// <summary>
+    /// Some dummy data for fill database when Creating migrations
+    /// Good for tests and development
+    /// </summary>
     public static class DummyTasks
     {
         public static List<TaskModel> Get()
