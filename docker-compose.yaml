@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    container_name: mssql
+    ports:
+      - 1433:1433
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=strong!password123"
+    volumes:
+      - .\SqlServer:/scripts:r
+    command:
+      - /bin/bash
+      - -c 
+      - |
+        # Launch MSSQL and send to background
+        /opt/mssql/bin/sqlservr &
+        # Wait 30 seconds for it to be available
+        # (lame, I know, but there's no nc available to start prodding network ports)
+        sleep 30
+        # Run every script in /scripts
+        # TODO set a flag so that this is only done once on creation, 
+        #      and not every time the container runs
+        for foo in /scripts/*.sql
+          do /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -l 30 -e -i $$foo
+        done
+        # So that the container doesn't shut down, sleep this thread
+        sleep infinity
+
+  taskapi:
+    image: "pelikanfix16/taskapi:latest"
+    container_name: taskapi
+    ports:
+    - 6021:80
+    #command: dotnet user-secrets set ConnectionStrings:TaskManagerConnectionString "Data Source=mssql,1433;Initial Catalog=master;Integrated Security=False;Pooling=False;User ID=sa;Password=strong!password123"
+    environment:
+      - ConnectionStrings__TaskManagerConnectionString=Data Source=mssql,1433;Initial Catalog=master;Integrated Security=False;Pooling=False;User ID=sa;Password=strong!password123
+    links:
+    - mssql
